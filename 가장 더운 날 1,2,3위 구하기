@@ -1,0 +1,30 @@
+import csv
+f =open('korea.csv')
+data = csv.reader(f)
+next(data)
+changetemp = 0
+changedate = ''
+temp = [-999,-998,-997]
+date = ['','','']
+for row in data:
+    if row[-1] !='':
+        row[-1] = (float(row[-1]))
+        if row[-1] > temp[2]:
+            temp[2] = row[-1]
+            date[2] = row[0]
+            if temp[1] < temp[2]:
+                    changetemp = temp[2]
+                    temp[2] = temp[1]
+                    temp[1] = changetemp
+                    changedate = date[2]
+                    date[2] = date[1]
+                    date[1] = changedate
+                    if temp[0] < temp[1]:
+                        changetemp = temp[1]
+                        temp[1] = temp[0]
+                        temp[0] = changetemp
+                        changedate = date[1]
+                        date[1] = date[0]
+                        date[0] = changedate
+                 
+print(date,temp)               
