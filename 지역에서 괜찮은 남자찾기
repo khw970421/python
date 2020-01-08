@@ -22,3 +22,9 @@ print(float(sum)*((int)(percent)/100)*((int)(gentle)/100))
 
 plt.barh([20,21,22,23,24,25,26,27,28,29,30,31,32,33],man)
 plt.show()
+
+
+
+
+
+/*나이는 20~33으로 설정*/
